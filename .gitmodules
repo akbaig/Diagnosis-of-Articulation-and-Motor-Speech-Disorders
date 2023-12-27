@@ -1,0 +1,6 @@
+[submodule "voca"]
+	path = voca
+	url = git@github.com:TimoBolkart/voca.git
+[submodule "deca"]
+	path = deca
+	url = git@github.com:yfeng95/DECA.git
