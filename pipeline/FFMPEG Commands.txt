@@ -1,0 +1,44 @@
+Speeding/Slowing Down Video:
+
+	ffmpeg -i input.mkv -filter_complex "[0:v]setpts=<1/x>*PTS[v];[0:a]atempo=<x>[a]" -map "[v]" -map "[a]" output.mkv
+
+Getting duration:
+
+	ffmpeg -i file.flv 2>&1 | grep "Duration" | cut -d ' ' -f 4 | sed s/,// | sed 's@\..*@@g' | awk '{ split($1, A, ":"); split(A[3], B, "."); print 3600*A[1] + 60*A[2] + B[1] }'
+
+	ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4
+
+Extract images every second
+
+	mkdir frames
+	ffmpeg -i "C:\Applications\FFMPEG\aa.mp4" "frames/out-%03d.jpg"
+
+	ffmpeg -i input.flv -vf fps=1 out%d.png
+
+Extract image after <x> seconds
+
+	ffmpeg -i myvideo.avi -vf fps=1/<x> img%03d.jpg
+
+Images to video
+
+	cat *.png | ffmpeg -f image2pipe -i - output.mp4
+
+	ffmpeg -framerate 24 -i Project%03d.png Project.mp4
+
+	ffmpeg -framerate 30 -i #{out_dir}/%03d.png -i audio/audio.ogg -c:a copy -shortest -c:v libx264 -pix_fmt yuv420p out/final/#{out_dir.sub("out/", "")}.mp4
+	
+	ffmpeg -framerate 30 -pattern_type glob -i '*.png' -i audio.ogg -c:a copy -shortest -c:v libx264 -pix_fmt yuv420p out.mp4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
