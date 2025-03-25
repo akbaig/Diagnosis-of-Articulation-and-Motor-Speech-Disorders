@@ -1,5 +1,9 @@
-# Diagnosis-of-Articulation-and-Motor-Speech-Disorders
-A bachelors final year project combining various deep learning models to build a pipeline for diagnosing articulation and speech disorders
+A bachelors final year project combining various deep learning models to build a pipeline for diagnosing articulation and speech disorders using **3D facial features**
+
+## Video Explanation
+https://github.com/user-attachments/assets/d4bf8590-ecc1-4de1-b2e0-9afb56d5ffc7
+
+## GUI
 
 ![BS_FYP_SS](https://github.com/akbaig/Diagnosis-of-Articulation-and-Motor-Speech-Disorders/assets/57063370/fc07f0f2-c236-4e09-b87a-64ffd60d7c55)
 
